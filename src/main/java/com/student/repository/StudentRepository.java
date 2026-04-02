@@ -7,9 +7,9 @@ import java.util.List;
 
 public class StudentRepository {
 
-    private static final String URL  = "jdbc:mysql://localhost:3306/studentdb";
-    private static final String USER = "root";
-    private static final String PASS = "password";
+    private static final String URL  = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASS = System.getenv("DB_PASS");
 
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASS);
